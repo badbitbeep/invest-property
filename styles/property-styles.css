@@ -1,0 +1,27 @@
+.property {
+    padding-left: 10%;
+    padding-right: 10%;
+    display: block;
+}
+
+.propertyPrice {
+    font-weight: 600;
+}
+
+.propertyDescription {
+
+}
+
+.propertyLocation {
+
+}
+
+.propertySize {
+    
+}
+
+.propertyImage {
+  background-size: cover;
+  min-height: 100px;
+  min-width: 100px;
+}

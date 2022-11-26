@@ -1,4 +1,5 @@
-@import './toolbar-styles.css';
+@import './styles/toolbar-styles.css';
+@import './styles/property-styles.css';
 
 body {
     margin: 0;

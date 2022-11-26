@@ -1,13 +1,20 @@
-import { PropertyDatabase } from './propertyDatabase.js'
+import { PropertyDatabase } from "./model/propertyDatabase/propertyDatabase.js";
+import { PropertyVisualizer } from "./view/propertyVisualizer.js";
 
 export class App {
-  resource
-
   constructor() {
     this.propertyDatabase = new PropertyDatabase();
+    this.propertyVisualizer = new PropertyVisualizer(
+      document.getElementById("propertyList"),
+      this.propertyDatabase
+    );
   }
 
   run() {
-    this.propertyDatabase.loadDatabase('default');
+    this.propertyDatabase
+      .loadDatabase("database/property/database.json")
+      .then(() => {
+        this.propertyVisualizer.render();
+      });
   }
 }

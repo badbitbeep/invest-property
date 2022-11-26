@@ -1,0 +1,30 @@
+[
+  {
+    "type": "Apartment",
+    "location": "Russia",
+    "imageUrl": "database/property/images/entry0.png",
+    "description": "apartment in the hearth of Moscow with a view on Moscow City buisiness center",
+    "price": {
+      "value": 25000000,
+      "currency": "Russian Rubble"
+    },
+    "size": {
+      "value": 65,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "Villa",
+    "location": "Spain",
+    "imageUrl": "database/property/images/entry1.png",
+    "description": "Villa near the coastline with personal swimming pool and mini-golf zone",
+    "price": {
+      "value": 500000,
+      "currency": "Euro"
+    },
+    "size": {
+      "value": 3000,
+      "dimension": "Feet Squared"
+    }
+  }
+]

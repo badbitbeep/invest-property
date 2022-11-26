@@ -23,7 +23,7 @@
 }
 
 .logoIcon {
-  background-image: url('./icons/house.png');
+  background-image: url('/icons/house.png');
   background-size: cover;
   min-height: 80px;
   max-height: 80px;
