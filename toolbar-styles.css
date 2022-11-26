@@ -1,0 +1,32 @@
+@import "./visual-styles.css";
+
+.toolbarHeader {
+  width: 100%;
+  background-color: var(--light-grey);
+  display: block;
+}
+
+.toolbarLogo {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+
+.toolbarHeaderText {
+  font-size: 20pt;
+  font-weight: 600;
+  line-height: 80px;
+  padding-left: 20px;
+}
+
+.logoIcon {
+  background-image: url('./icons/house.png');
+  background-size: cover;
+  min-height: 80px;
+  max-height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+}
