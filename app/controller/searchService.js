@@ -1,5 +1,12 @@
 import { DEFAULT_FILTER } from "../model/propertyDatabase/propertyDatabase.js";
 
+function splitTextForSearch(text) {
+  return text
+    .split(" ")
+    .filter((word) => word)
+    .map((word) => word.toLowerCase());
+}
+
 export class SearchService {
   constructor(
     propertyDatabase,
@@ -19,25 +26,29 @@ export class SearchService {
     };
   }
 
+  resetSearch() {
+    this.searchInputElement.value = "";
+  }
+
   search(text) {
-    let searchWords = text.split(" ").filter((word) => word);
+    let searchWords = splitTextForSearch(text);
 
     if (searchWords.length === 0) {
       this.propertyDatabase.applyFilter(DEFAULT_FILTER);
     } else {
       let filter = (property) => {
-        if (searchWords.indexOf(property.type) !== -1) {
+        if (searchWords.indexOf(property.type.toLowerCase()) !== -1) {
           return true;
         }
 
-        let location = property.location.split(" ");
+        let location = splitTextForSearch(property.location);
         for (let searchWord of searchWords) {
           if (location.indexOf(searchWord) !== -1) {
             return true;
           }
         }
 
-        let description = property.description.split(" ");
+        let description = splitTextForSearch(property.description);
         for (let searchWord of searchWords) {
           if (description.indexOf(searchWord) !== -1) {
             return true;

@@ -55,6 +55,10 @@ export class PropertyVisualizer {
     );
   }
 
+  resetPaging() {
+    this.currentPage = 0;
+  }
+
   gotoPage(pageIndex) {
     scrollToTop();
     this.currentPage = pageIndex;
