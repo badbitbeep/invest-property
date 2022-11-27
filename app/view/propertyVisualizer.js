@@ -1,4 +1,4 @@
-import { MAX_ELEMENTS_PER_PAGE } from "../config.js";
+import { MAX_ELEMENTS_PER_PAGE, MAX_PAGES_IN_NAVBAR } from "../config.js";
 import { getCurrencySymbol } from "./price.js";
 import { getDimensionSymbol } from "./size.js";
 
@@ -121,16 +121,37 @@ export class PropertyVisualizer {
   }
 
   renderPages() {
+    if (this.pageCount === 0) {
+      return;
+    }
+
     let navigationContainer = document.createElement("div");
     navigationContainer.classList.add("propertyPageNavContainer");
     this.rootElement.appendChild(navigationContainer);
-    for (let i = 0; i < this.pageCount; i++) {
+
+    appendLinkElement(
+      "<..",
+      "propertyPageNav",
+      () => this.gotoPage(0),
+      navigationContainer
+    );
+
+    let minPage = Math.max(0, this.currentPage - MAX_PAGES_IN_NAVBAR / 2);
+    let maxPage = Math.min(minPage + MAX_PAGES_IN_NAVBAR, this.pageCount);
+    for (let i = minPage; i < maxPage; i++) {
       appendLinkElement(
         `${i + 1}`,
-        "propertyPageNav",
-        () => this.gotoPage(i),
+        i === this.currentPage ? "propertyPageNavCurrent" : "propertyPageNav",
+        i === this.currentPage ? () => {} : () => this.gotoPage(i),
         navigationContainer
       );
     }
+
+    appendLinkElement(
+      "..>",
+      "propertyPageNav",
+      () => this.gotoPage(this.pageCount - 1),
+      navigationContainer
+    );
   }
 }

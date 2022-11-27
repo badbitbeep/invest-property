@@ -2,11 +2,19 @@
 
 .toolbarHeader {
   width: 100%;
+  height: 120px;
+  contain: strict;
   background-color: var(--light-grey);
+  position: relative;
+}
+
+.toolbarLogo {
   display: flex;
+  position: absolute;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  left: 0;
 }
 
 .toolbarHeaderText {
@@ -21,4 +29,32 @@
   max-height: 80px;
   min-width: 80px;
   max-width: 80px;
+}
+
+.toolbarSearchContainer {
+  position: absolute;
+  display: flex;
+  right: 0;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.toolbarSearchInput {
+  border-radius: 5px;
+  border-color: var(--dark-grey);
+  height: 30px;
+  width: 300px;
+  margin-right: 10px;
+  font-size: large;
+}
+
+.toolbarSearchIcon {
+  max-width: 36px;
+  max-height: 36px;
+  vertical-align: middle;
+}
+
+.toolbarSearchIcon:hover {
+  cursor: pointer;
 }
