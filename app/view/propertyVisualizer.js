@@ -16,8 +16,13 @@ export class PropertyVisualizer {
     );
   }
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   gotoPage(pageIndex) {
     this.currentPage = pageIndex;
+    this.scrollToTop();
     this.render();
   }
 
