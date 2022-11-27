@@ -1,27 +1,86 @@
+.propertyList {
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 800px;
+}
+
 .property {
-    padding-left: 10%;
-    padding-right: 10%;
-    display: block;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.propertyType {
+  font-style: italic;
+  padding-bottom: 10px;
 }
 
 .propertyPrice {
-    font-weight: 600;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.propertyTextBlock {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.propertyText {
 }
 
 .propertyDescription {
-
 }
 
-.propertyLocation {
-
+.propertyBottomRightBlock {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.propertySize {
-    
+.propertyIcon {
+  background-size: cover;
+  max-width: 15px;
+  max-height: 15px;
+}
+
+.propertyBottomLeftBlock {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .propertyImage {
   background-size: cover;
-  min-height: 100px;
-  min-width: 100px;
+  max-width: 300px;
+  max-height: 250px;
+  min-width: 300px;
+  min-height: 200px;
+  transition: all 0.3s;
+}
+
+.property:hover .propertyDescription {
+  text-decoration: underline;
+}
+
+.property:hover .propertyImage {
+  transform: scale(1.02);
+  vertical-align: middle;
+}
+
+.propertyPageNav {
+  margin-right: 1em;
+}
+
+.propertyPageNav:hover {
+  text-decoration: underline;
+  color: var(--light-blue);
+  cursor: pointer;
+}
+
+.propertyPageNavContainer {
+  text-align: center;
+  margin-bottom: 40px;
 }

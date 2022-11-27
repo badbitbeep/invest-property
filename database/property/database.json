@@ -26,5 +26,145 @@
       "value": 3000,
       "dimension": "Feet Squared"
     }
+  },
+  {
+    "type": "House",
+    "location": "England",
+    "imageUrl": "database/property/images/entry2.png",
+    "description": "Old brick mansion in the middle of english woods",
+    "price": {
+      "value": 4000000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 1200,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "Flat",
+    "location": "United States",
+    "imageUrl": "database/property/images/entry3.png",
+    "description": "Small modern flat in the center of New York",
+    "price": {
+      "value": 250000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 700,
+      "dimension": "Feet Squared"
+    }
+  },
+  {
+    "type": "Apartment",
+    "location": "Thailand",
+    "imageUrl": "database/property/images/entry4.png",
+    "description": "Apartment on the top of the skyscraper in the Bangkok buisiness center",
+    "price": {
+      "value": 1250000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 800,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "Villa",
+    "location": "Maldives",
+    "imageUrl": "database/property/images/entry5.png",
+    "description": "Comfortable villa near the Indian ocean with stunning view on the island",
+    "price": {
+      "value": 500000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 250,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "House",
+    "location": "France",
+    "imageUrl": "database/property/images/entry6.png",
+    "description": "Newly stone house in beautiful neightborhood near the Paris",
+    "price": {
+      "value": 400000,
+      "currency": "Euro"
+    },
+    "size": {
+      "value": 400,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "House",
+    "location": "Canada",
+    "imageUrl": "database/property/images/entry7.png",
+    "description": "Small house near Toronto, fully designed and ready for living",
+    "price": {
+      "value": 700000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 2000,
+      "dimension": "Feet Squared"
+    }
+  },
+  {
+    "type": "House",
+    "location": "Romania",
+    "imageUrl": "database/property/images/entry8.png",
+    "description": "old Romanian mansion in the mountains with preserved heritage interior",
+    "price": {
+      "value": 280000,
+      "currency": "Euro"
+    },
+    "size": {
+      "value": 3500,
+      "dimension": "Feet Squared"
+    }
+  },
+  {
+    "type": "Villa",
+    "location": "Indonesia",
+    "imageUrl": "database/property/images/entry9.png",
+    "description": "modern villa on Bali island with personal large swimming pool and multiple guest rooms",
+    "price": {
+      "value": 800000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 900,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "Villa",
+    "location": "Thailand",
+    "imageUrl": "database/property/images/entry10.png",
+    "description": "classic design styled villa on Phukhet island",
+    "price": {
+      "value": 500000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 450,
+      "dimension": "Meters Squared"
+    }
+  },
+  {
+    "type": "Apartment",
+    "location": "United States",
+    "imageUrl": "database/property/images/entry11.png",
+    "description": "rooftop apartment at the center of NYC with panoramic view on the central park",
+    "price": {
+      "value": 2500000,
+      "currency": "US Dollar"
+    },
+    "size": {
+      "value": 1000,
+      "dimension": "Feet Squared"
+    }
   }
 ]
