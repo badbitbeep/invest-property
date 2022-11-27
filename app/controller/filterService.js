@@ -4,11 +4,13 @@ export class FilterService {
     this.notifyFilter = notifyFilter;
     this.typeFilter = undefined;
     this.countryFilter = undefined;
+    this.currencyFilter = undefined;
   }
 
   resetFiltering() {
     this.typeFilter = undefined;
     this.countryFilter = undefined;
+    this.currencyFilter = undefined;
   }
 
   addTypeFilter(type) {
@@ -21,15 +23,20 @@ export class FilterService {
     this.updateFiltering();
   }
 
+  addCurrencyFilter(currency) {
+    this.currencyFilter = currency;
+    this.updateFiltering();
+  }
+
   updateFiltering() {
     let filter = (property) => {
-      if (this.typeFilter !== undefined && property.type !== this.typeFilter) {
+      if (this.typeFilter && property.type !== this.typeFilter) {
         return false;
       }
-      if (
-        this.countryFilter !== undefined &&
-        property.location !== this.countryFilter
-      ) {
+      if (this.countryFilter && property.location !== this.countryFilter) {
+        return false;
+      }
+      if (this.currencyFilter && property.price.currency !== this.currencyFilter) {
         return false;
       }
       return true;

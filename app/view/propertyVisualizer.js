@@ -83,6 +83,13 @@ export class PropertyVisualizer {
       MAX_ELEMENTS_PER_PAGE
     );
 
+    if (propertiesForPage.length === 0) {
+      let element = document.createElement("span");
+      element.classList.add("propertyNotFoundText");
+      element.innerText = "Sorry, we have no properties to display! Please try another request";
+      this.rootElement.appendChild(element);
+    }
+
     for (let property of propertiesForPage) {
       let element = document.createElement("div");
       element.classList.add("property");

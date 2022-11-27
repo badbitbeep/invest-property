@@ -1,7 +1,11 @@
 .propertyList {
   padding-left: 5%;
   padding-right: 5%;
-  max-width: 800px;
+  min-width: 800px;
+}
+
+.propertyNotFoundText {
+  font-size: 2em;
 }
 
 .property {

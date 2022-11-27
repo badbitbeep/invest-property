@@ -1,10 +1,11 @@
-import { Country } from "../model/country.js";
+import { Country } from "../model/propertyDatabase/country.js";
+import { Currency } from "../model/propertyDatabase/price.js";
 import { PropertyType } from "../model/propertyDatabase/property.js";
 
 const ANY_OPTION_TEXT = "Any";
 
 function extractOption(clickEvent) {
-  let option = clickEvent.target.id;
+  let option = clickEvent.target.id.substr("filterOption.".length);
   return option !== ANY_OPTION_TEXT ? option : undefined;
 }
 
@@ -30,7 +31,7 @@ function appendDropdownElement(text, currentOption, options, parent, onSelect) {
   for (let option of [ANY_OPTION_TEXT, ...options]) {
     let dropdownOptionContainer = document.createElement("div");
     dropdownOptionContainer.classList.add("filterDropdownOption");
-    dropdownOptionContainer.id = option;
+    dropdownOptionContainer.id = `filterOption.${option}`;
     optionsElement.appendChild(dropdownOptionContainer);
     dropdownOptionContainer.onclick = onSelect;
 
@@ -56,15 +57,18 @@ export class FilterVisualizer {
     while (this.rootElement.firstChild) {
       this.rootElement.firstChild.remove();
     }
-    this.currentPage = 0;
   }
 
   renderFilterOptions() {
+    let filterList = document.createElement("div");
+    filterList.classList.add("filteringList");
+    this.rootElement.appendChild(filterList);
+
     appendDropdownElement(
       "type",
       this.filterService.typeFilter ?? "Any",
       Object.values(PropertyType),
-      this.rootElement,
+      filterList,
       (e) => this.filterService.addTypeFilter(extractOption(e))
     );
 
@@ -72,8 +76,16 @@ export class FilterVisualizer {
       "country",
       this.filterService.countryFilter ?? "Any",
       Object.values(Country),
-      this.rootElement,
+      filterList,
       (e) => this.filterService.addCountryFilter(extractOption(e))
+    );
+
+    appendDropdownElement(
+      "currency",
+      this.filterService.currencyFilter ?? "Any",
+      Object.values(Currency),
+      filterList,
+      (e) => this.filterService.addCurrencyFilter(extractOption(e))
     );
   }
 }

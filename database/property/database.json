@@ -34,7 +34,7 @@
     "description": "Old brick mansion in the middle of english woods",
     "price": {
       "value": 4000000,
-      "currency": "US Dollar"
+      "currency": "Euro"
     },
     "size": {
       "value": 1200,

@@ -9,5 +9,18 @@ body {
 }
 
 .mainBlock {
+    position: relative;
     display: flex;
+}
+
+.middle {
+    width: 100%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
 }
