@@ -2,6 +2,45 @@ import { MAX_ELEMENTS_PER_PAGE } from "../config.js";
 import { getCurrencySymbol } from "./price.js";
 import { getDimensionSymbol } from "./size.js";
 
+function renderPropertyPrice(propertyPrice) {
+  let currencySymbol = getCurrencySymbol(propertyPrice.currency);
+  return `${propertyPrice.value} ${currencySymbol}`;
+}
+
+function renderPropertySize(propertySize) {
+  let dimensionSymbol = getDimensionSymbol(propertySize.dimension);
+  return `${propertySize.value} ${dimensionSymbol}`;
+}
+
+function appendTextElement(text, style, parent) {
+  let element = document.createElement("div");
+  element.classList.add(style);
+  parent.appendChild(element);
+
+  let textElement = document.createElement("span");
+  textElement.innerText = text;
+  element.appendChild(textElement);
+}
+
+function appendImageElement(url, style, parent) {
+  let element = document.createElement("img");
+  element.classList.add(style);
+  element.src = url;
+  parent.appendChild(element);
+}
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+function appendLinkElement(text, style, callback, parent) {
+  let element = document.createElement("a");
+  element.classList.add(style);
+  element.onclick = callback;
+  element.innerText = text;
+  parent.appendChild(element);
+}
+
 export class PropertyVisualizer {
   constructor(rootElement, propertyDatabase) {
     this.rootElement = rootElement;
@@ -16,41 +55,10 @@ export class PropertyVisualizer {
     );
   }
 
-  scrollToTop() {
-    window.scrollTo(0, 0);
-  }
-
   gotoPage(pageIndex) {
+    scrollToTop();
     this.currentPage = pageIndex;
-    this.scrollToTop();
     this.render();
-  }
-
-  renderPropertyPrice(propertyPrice) {
-    let currencySymbol = getCurrencySymbol(propertyPrice.currency);
-    return `${propertyPrice.value} ${currencySymbol}`;
-  }
-
-  renderPropertySize(propertySize) {
-    let dimensionSymbol = getDimensionSymbol(propertySize.dimension);
-    return `${propertySize.value} ${dimensionSymbol}`;
-  }
-
-  appendTextElement(text, style, parent) {
-    let element = document.createElement("div");
-    element.classList.add(style);
-    parent.appendChild(element);
-
-    let textElement = document.createElement("span");
-    textElement.innerText = text;
-    element.appendChild(textElement);
-  }
-
-  appendImageElement(url, style, parent) {
-    let element = document.createElement("img");
-    element.classList.add(style);
-    element.src = url;
-    parent.appendChild(element);
   }
 
   render() {
@@ -76,33 +84,29 @@ export class PropertyVisualizer {
       element.classList.add("property");
       this.rootElement.appendChild(element);
 
-      this.appendImageElement(property.imageUrl, "propertyImage", element);
+      appendImageElement(property.imageUrl, "propertyImage", element);
 
       let textBlock = document.createElement("div");
       textBlock.classList.add("propertyTextBlock");
       element.appendChild(textBlock);
 
-      this.appendTextElement(
-        this.renderPropertyPrice(property.price),
+      appendTextElement(
+        renderPropertyPrice(property.price),
         "propertyPrice",
         textBlock
       );
 
-      this.appendTextElement(property.type, "propertyType", textBlock);
+      appendTextElement(property.type, "propertyType", textBlock);
 
-      this.appendTextElement(
-        property.description,
-        "propertyDescription",
-        textBlock
-      );
+      appendTextElement(property.description, "propertyDescription", textBlock);
 
       let sizeElement = document.createElement("div");
       sizeElement.classList.add("propertyBottomLeftBlock");
       textBlock.appendChild(sizeElement);
 
-      this.appendImageElement("icons/square.png", "propertyIcon", sizeElement);
-      this.appendTextElement(
-        this.renderPropertySize(property.size),
+      appendImageElement("icons/square.png", "propertyIcon", sizeElement);
+      appendTextElement(
+        renderPropertySize(property.size),
         "propertyText",
         sizeElement
       );
@@ -111,12 +115,8 @@ export class PropertyVisualizer {
       locationElement.classList.add("propertyBottomRightBlock");
       textBlock.appendChild(locationElement);
 
-      this.appendImageElement("icons/map.png", "propertyIcon", locationElement);
-      this.appendTextElement(
-        property.location,
-        "propertyText",
-        locationElement
-      );
+      appendImageElement("icons/map.png", "propertyIcon", locationElement);
+      appendTextElement(property.location, "propertyText", locationElement);
     }
   }
 
@@ -125,11 +125,12 @@ export class PropertyVisualizer {
     navigationContainer.classList.add("propertyPageNavContainer");
     this.rootElement.appendChild(navigationContainer);
     for (let i = 0; i < this.pageCount; i++) {
-      let pageLink = document.createElement("a");
-      pageLink.classList.add("propertyPageNav");
-      pageLink.onclick = () => this.gotoPage(i);
-      pageLink.innerText = `${i + 1}`;
-      navigationContainer.appendChild(pageLink);
+      appendLinkElement(
+        `${i + 1}`,
+        "propertyPageNav",
+        () => this.gotoPage(i),
+        navigationContainer
+      );
     }
   }
 }
