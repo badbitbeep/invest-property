@@ -86,7 +86,8 @@ export class PropertyVisualizer {
     if (propertiesForPage.length === 0) {
       let element = document.createElement("span");
       element.classList.add("propertyNotFoundText");
-      element.innerText = "Sorry, we have no properties to display! Please try another request";
+      element.innerText =
+        "Sorry, we have no properties to display! Please try another request";
       this.rootElement.appendChild(element);
     }
 
@@ -95,7 +96,14 @@ export class PropertyVisualizer {
       element.classList.add("property");
       this.rootElement.appendChild(element);
 
-      appendImageElement(property.imageUrl, "propertyImage", element);
+      let imageBlock = document.createElement("div");
+      element.appendChild(imageBlock);
+      appendImageElement(property.imageUrl, "propertyImage", imageBlock);
+
+      let contactsPopup = document.createElement("div");
+      contactsPopup.classList.add("propertyContactsPopup");
+      imageBlock.appendChild(contactsPopup);
+      appendTextElement(property.contacts, "propertyContacts", contactsPopup);
 
       let textBlock = document.createElement("div");
       textBlock.classList.add("propertyTextBlock");

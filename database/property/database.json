@@ -11,7 +11,8 @@
     "size": {
       "value": 65,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Villa",
@@ -25,7 +26,8 @@
     "size": {
       "value": 3000,
       "dimension": "Feet Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "House",
@@ -39,7 +41,8 @@
     "size": {
       "value": 1200,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Flat",
@@ -53,7 +56,8 @@
     "size": {
       "value": 700,
       "dimension": "Feet Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Apartment",
@@ -67,7 +71,8 @@
     "size": {
       "value": 800,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Villa",
@@ -81,7 +86,8 @@
     "size": {
       "value": 250,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "House",
@@ -95,7 +101,8 @@
     "size": {
       "value": 400,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "House",
@@ -109,7 +116,8 @@
     "size": {
       "value": 2000,
       "dimension": "Feet Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "House",
@@ -123,7 +131,8 @@
     "size": {
       "value": 3500,
       "dimension": "Feet Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Villa",
@@ -137,7 +146,8 @@
     "size": {
       "value": 900,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Villa",
@@ -151,7 +161,8 @@
     "size": {
       "value": 450,
       "dimension": "Meters Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
     "type": "Apartment",
@@ -165,6 +176,7 @@
     "size": {
       "value": 1000,
       "dimension": "Feet Squared"
-    }
+    },
+    "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   }
 ]
