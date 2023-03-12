@@ -1,13 +1,16 @@
-import { DATABASE_URL } from "./config.js";
+import { PROPERTY_DATABASE_URL, USER_DATABASE_NAME } from "./config.js";
 import { FilterService } from "./controller/filterService.js";
 import { SearchService } from "./controller/searchService.js";
+import { CookieService } from "./controller/cookieService.js";
 import { PropertyDatabase } from "./model/propertyDatabase/propertyDatabase.js";
+import { UserDatabase } from "./model/UserDatabase/userDatabase.js";
 import { FilterVisualizer } from "./view/filterVisualizer.js";
 import { PropertyVisualizer } from "./view/propertyVisualizer.js";
 
 export class App {
   constructor() {
     this.propertyDatabase = new PropertyDatabase();
+    this.userDatabase = new UserDatabase();
     this.searchService = new SearchService(
       this.propertyDatabase,
       document.getElementById("searchService.input"),
@@ -21,9 +24,11 @@ export class App {
       this.searchService.resetSearch();
       this.triggerRender();
     });
+    this.cookieService = new CookieService();
     this.propertyVisualizer = new PropertyVisualizer(
       document.getElementById("PropertyVisualizer.render"),
-      this.propertyDatabase
+      this.propertyDatabase,
+      this.userDatabase,
     );
     this.filterVisualizer = new FilterVisualizer(
       document.getElementById("FilterVisualizer.render"),
@@ -32,9 +37,11 @@ export class App {
   }
 
   run() {
-    this.propertyDatabase
-      .loadDatabase(DATABASE_URL)
-      .then(() => this.triggerRender());
+    Promise.all([
+      this.propertyDatabase.loadDatabase(PROPERTY_DATABASE_URL),
+      this.userDatabase.loadDatabase(this.cookieService),
+    ]).then(() => this.triggerRender());
+    this.userDatabase;
   }
 
   triggerRender() {

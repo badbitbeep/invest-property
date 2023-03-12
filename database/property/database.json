@@ -1,5 +1,6 @@
 [
   {
+    "id": "property-0",
     "type": "Apartment",
     "location": "Russia",
     "imageUrl": "database/property/images/entry0.png",
@@ -15,6 +16,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-1",
     "type": "Villa",
     "location": "Spain",
     "imageUrl": "database/property/images/entry1.png",
@@ -30,6 +32,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-2",
     "type": "House",
     "location": "England",
     "imageUrl": "database/property/images/entry2.png",
@@ -45,6 +48,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-3",
     "type": "Flat",
     "location": "United States",
     "imageUrl": "database/property/images/entry3.png",
@@ -60,6 +64,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-4",
     "type": "Apartment",
     "location": "Thailand",
     "imageUrl": "database/property/images/entry4.png",
@@ -75,6 +80,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-5",
     "type": "Villa",
     "location": "Maldives",
     "imageUrl": "database/property/images/entry5.png",
@@ -90,6 +96,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-6",
     "type": "House",
     "location": "France",
     "imageUrl": "database/property/images/entry6.png",
@@ -105,6 +112,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-7",
     "type": "House",
     "location": "Canada",
     "imageUrl": "database/property/images/entry7.png",
@@ -120,6 +128,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-8",
     "type": "House",
     "location": "Romania",
     "imageUrl": "database/property/images/entry8.png",
@@ -135,6 +144,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-9",
     "type": "Villa",
     "location": "Indonesia",
     "imageUrl": "database/property/images/entry9.png",
@@ -150,6 +160,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-0",
     "type": "Villa",
     "location": "Thailand",
     "imageUrl": "database/property/images/entry10.png",
@@ -165,6 +176,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
+    "id": "property-1",
     "type": "Apartment",
     "location": "United States",
     "imageUrl": "database/property/images/entry11.png",

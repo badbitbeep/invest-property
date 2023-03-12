@@ -18,9 +18,25 @@
   padding-bottom: 10px;
 }
 
-.propertyPrice {
-  font-weight: 600;
+.propertyHeaderBlock {
   padding-bottom: 10px;
+  height: 1em;
+}
+
+.propertyLikeButton {
+  background-size: cover;
+  height: inherit;
+  display: flex;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.propertyPrice {
+  display: flex;
+  position: absolute;
+  left: 0;
+  font-weight: 600;
 }
 
 .propertyTextBlock {
@@ -73,6 +89,7 @@
   width: 250px;
   padding-left: 50px;
   padding-top: 150px;
+  cursor: help;
 }
 
 .propertyContactsPopup:hover {

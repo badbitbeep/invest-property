@@ -20,6 +20,7 @@ function appendTextElement(text, style, parent) {
   let textElement = document.createElement("span");
   textElement.innerText = text;
   element.appendChild(textElement);
+  return textElement;
 }
 
 function appendImageElement(url, style, parent) {
@@ -27,6 +28,7 @@ function appendImageElement(url, style, parent) {
   element.classList.add(style);
   element.src = url;
   parent.appendChild(element);
+  return element;
 }
 
 function scrollToTop() {
@@ -39,12 +41,14 @@ function appendLinkElement(text, style, callback, parent) {
   element.onclick = callback;
   element.innerText = text;
   parent.appendChild(element);
+  return element;
 }
 
 export class PropertyVisualizer {
-  constructor(rootElement, propertyDatabase) {
+  constructor(rootElement, propertyDatabase, userDatabase) {
     this.rootElement = rootElement;
     this.propertyDatabase = propertyDatabase;
+    this.userDatabase = userDatabase;
     this.maxElementsPerPage;
     this.currentPage = 0;
   }
@@ -74,6 +78,16 @@ export class PropertyVisualizer {
   clearElementsChildren() {
     while (this.rootElement.firstChild) {
       this.rootElement.firstChild.remove();
+    }
+  }
+
+  onLikeButtonClicked(e, propertyId) {
+    if (this.userDatabase.isPropertyLiked(propertyId)) {
+      this.userDatabase.unlikeProperty(propertyId);
+      e.target.src = "icons/like-empty.png";
+    } else {
+      this.userDatabase.likeProperty(propertyId);
+      e.target.src = "icons/like-active.png";
     }
   }
 
@@ -109,11 +123,25 @@ export class PropertyVisualizer {
       textBlock.classList.add("propertyTextBlock");
       element.appendChild(textBlock);
 
+      let headerElement = document.createElement("div");
+      headerElement.classList.add("propertyHeaderBlock");
+      textBlock.appendChild(headerElement);
+
       appendTextElement(
         renderPropertyPrice(property.price),
         "propertyPrice",
-        textBlock
+        headerElement
       );
+
+      let likeButton = appendImageElement(
+        this.userDatabase.isPropertyLiked(property.id)
+          ? "icons/like-active.png"
+          : "icons/like-empty.png",
+        "propertyLikeButton",
+        headerElement
+      );
+      likeButton.onclick = (e) =>
+        this.onLikeButtonClicked(e, property.id);
 
       appendTextElement(property.type, "propertyType", textBlock);
 

@@ -5,8 +5,9 @@ export const PropertyType = {
     Villa: 'Villa',
 }
 
-export function createProperty(type, location, price, imageUrl, description) {
+export function createProperty(id, type, location, price, imageUrl, description) {
   return {
+    id,
     type,
     location,
     price,
