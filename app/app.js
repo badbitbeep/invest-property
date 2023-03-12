@@ -3,7 +3,7 @@ import { FilterService } from "./controller/filterService.js";
 import { SearchService } from "./controller/searchService.js";
 import { CookieService } from "./controller/cookieService.js";
 import { PropertyDatabase } from "./model/propertyDatabase/propertyDatabase.js";
-import { UserDatabase } from "./model/UserDatabase/userDatabase.js";
+import { UserDatabase } from "./model/userDatabase/userDatabase.js";
 import { FilterVisualizer } from "./view/filterVisualizer.js";
 import { PropertyVisualizer } from "./view/propertyVisualizer.js";
 
