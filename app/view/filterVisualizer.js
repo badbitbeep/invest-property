@@ -87,5 +87,13 @@ export class FilterVisualizer {
       filterList,
       (e) => this.filterService.addCurrencyFilter(extractOption(e))
     );
+
+    appendDropdownElement(
+      "show",
+      this.filterService.currencyFilter ?? "Any",
+      ["Likes Only"],
+      filterList,
+      (e) => this.filterService.addLikesFilter(extractOption(e) === "Likes Only")
+    );
   }
 }

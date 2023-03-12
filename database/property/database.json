@@ -160,7 +160,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
-    "id": "property-0",
+    "id": "property-10",
     "type": "Villa",
     "location": "Thailand",
     "imageUrl": "database/property/images/entry10.png",
@@ -176,7 +176,7 @@
     "contacts": "To contact call +90000000000 or mail investproperty@samplemail.com"
   },
   {
-    "id": "property-1",
+    "id": "property-11",
     "type": "Apartment",
     "location": "United States",
     "imageUrl": "database/property/images/entry11.png",

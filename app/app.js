@@ -20,15 +20,19 @@ export class App {
         this.triggerRender();
       }
     );
-    this.filterService = new FilterService(this.propertyDatabase, () => {
-      this.searchService.resetSearch();
-      this.triggerRender();
-    });
+    this.filterService = new FilterService(
+      this.propertyDatabase,
+      this.userDatabase,
+      () => {
+        this.searchService.resetSearch();
+        this.triggerRender();
+      }
+    );
     this.cookieService = new CookieService();
     this.propertyVisualizer = new PropertyVisualizer(
       document.getElementById("PropertyVisualizer.render"),
       this.propertyDatabase,
-      this.userDatabase,
+      this.userDatabase
     );
     this.filterVisualizer = new FilterVisualizer(
       document.getElementById("FilterVisualizer.render"),
